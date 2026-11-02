@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "SEOanalysis - SERP Keyword Intelligence",
+    "description": "Extension name"
+  },
+  "extensionShortName": {
+    "message": "SEOanalysis",
+    "description": "Short extension name"
+  },
+  "extensionDescription": {
+    "message": "See keyword volume, competition, CPC, and opportunity directly in Google Search. Free local estimates; Pro unlocks exact data and bulk tools.",
+    "description": "Chrome Web Store short description"
+  },
+  "actionTitle": {
+    "message": "Open SEOanalysis",
+    "description": "Toolbar action title"
+  }
+}

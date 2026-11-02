@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to SEOanalysis</title>
+    <link rel="stylesheet" href="./welcome.css" />
+  </head>
+  <body>
+    <header class="welcome-header">
+      <div class="header-inner">
+        <div class="brand-lockup">
+          <span class="brand-mark">
+            <svg viewBox="0 0 128 128" aria-hidden="true">
+              <defs>
+                <linearGradient id="welcomeLogo" x1="18" y1="12" x2="108" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E14550"></stop>
+                  <stop offset="1" stop-color="#971B2B"></stop>
+                </linearGradient>
+              </defs>
+              <rect width="128" height="128" rx="29" fill="url(#welcomeLogo)"></rect>
+              <circle cx="57" cy="55" r="27" fill="none" stroke="#fff" stroke-width="10"></circle>
+              <path d="M77 75 98 96" fill="none" stroke="#F39A82" stroke-linecap="round" stroke-width="12"></path>
+              <rect x="43" y="59" width="8" height="14" rx="3" fill="#fff"></rect>
+              <rect x="55" y="50" width="8" height="23" rx="3" fill="#fff"></rect>
+              <rect x="67" y="41" width="8" height="32" rx="3" fill="#FFD0D3"></rect>
+            </svg>
+          </span>
+          <span>
+            <strong>SEOanalysis</strong>
+            <small data-i18n="welcome.setupComplete">SETUP COMPLETE</small>
+          </span>
+        </div>
+        <div class="welcome-header-actions">
+          <button id="welcomeLanguageButton" class="welcome-language-button" type="button" title="Switch language" aria-label="Switch language">
+            <i data-lucide="languages"></i><span id="welcomeLanguageText">EN</span>
+          </button>
+          <span class="install-badge"><i data-lucide="check"></i><span data-i18n="welcome.installed">Extension installed</span></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="welcome-main">
+      <section class="welcome-hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="welcome.eyebrow">SEARCH LESS. DECIDE FASTER.</p>
+          <h1 data-i18n="welcome.headline">Know whether a keyword is worth pursuing.</h1>
+          <p class="hero-description" data-i18n="welcome.description">SEOanalysis puts keyword data where you already work.</p>
+          <div class="hero-actions">
+            <button id="startSearchButton" class="primary-button" type="button">
+              <i data-lucide="search"></i><span data-i18n="welcome.tryGoogle">Try on Google</span>
+            </button>
+            <button id="openOptionsButton" class="outline-button" type="button">
+              <i data-lucide="sliders-horizontal"></i><span data-i18n="welcome.configure">Configure data source</span>
+            </button>
+          </div>
+          <p class="hero-note" data-i18n="welcome.note">Free immediately. No API key required.</p>
+        </div>
+
+        <div class="product-preview" aria-label="SEOanalysis search results preview" data-i18n-aria-label="welcome.previewAlt">
+          <div class="browser-chrome">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <div class="address-bar">
+              <i data-lucide="lock-keyhole"></i>
+              google.com/search?q=b2b+seo+software
+            </div>
+          </div>
+          <div class="google-preview">
+            <div class="google-wordmark">
+              <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
+            <div class="preview-search">
+              <i data-lucide="search"></i>
+              <span>b2b seo software</span>
+              <i data-lucide="mic"></i>
+            </div>
+            <div class="seo-card-preview">
+              <div class="preview-card-top">
+                <span class="mini-logo"><i data-lucide="chart-no-axes-combined"></i></span>
+                <strong>SEOanalysis</strong>
+                <span class="preview-plan" data-i18n="common.free">FREE</span>
+                <span class="preview-query">b2b seo software</span>
+              </div>
+              <div class="preview-metrics">
+                <div>
+                  <span data-i18n="common.monthlyVolume">Monthly volume</span>
+                  <strong>8.4K</strong>
+                  <em data-i18n="common.country.US">United States</em>
+                </div>
+                <div>
+                  <span data-i18n="common.competition">Competition</span>
+                  <strong>46</strong>
+                  <em data-i18n="common.competitionBand.medium">Moderate</em>
+                </div>
+                <div>
+                  <span data-i18n="common.cpc">CPC</span>
+                  <strong>$4.18</strong>
+                  <em data-i18n="common.localEstimate">Local estimate</em>
+                </div>
+                <div>
+                  <span data-i18n="common.opportunity">Opportunity</span>
+                  <strong class="preview-accent">72</strong>
+                  <em data-i18n="common.opportunityBand.test">Worth testing</em>
+                </div>
+              </div>
+              <div class="preview-footer">
+                <span><i data-lucide="circle-dot"></i> <span data-i18n="common.localEstimate">Local estimate</span> · US</span>
+                <span data-i18n="welcome.previewQuota">28/30 left today</span>
+                <button type="button" tabindex="-1" data-i18n="common.workspace">Workspace</button>
+              </div>
+            </div>
+            <div class="result-skeleton">
+              <span class="skeleton-domain">example.com › seo-tools</span>
+              <strong>Best B2B SEO Software for Growing Teams</strong>
+              <span>Compare workflows, reporting, keyword coverage and pricing...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="setup-section">
+        <div class="setup-intro">
+          <p class="eyebrow" data-i18n="welcome.stepsKicker">THREE CALM STEPS</p>
+          <h2 data-i18n="welcome.stepsTitle">Three steps from install to your first decision</h2>
+        </div>
+        <div class="setup-steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <div>
+              <strong data-i18n="welcome.step1Title">Search normally</strong>
+              <p data-i18n="welcome.step1Desc">The card appears automatically above results.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <div>
+              <strong data-i18n="welcome.step2Title">Check opportunity first</strong>
+              <p data-i18n="welcome.step2Desc">Use core metrics to rule out weak keywords.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <div>
+              <strong data-i18n="welcome.step3Title">Upgrade only when needed</strong>
+              <p data-i18n="welcome.step3Desc">Pro adds exact data, trends, related terms, and export.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-strip">
+        <span class="privacy-icon"><i data-lucide="shield-check"></i></span>
+        <div>
+          <strong data-i18n="welcome.privacyTitle">You control the data</strong>
+          <p data-i18n="welcome.privacyDesc">Free estimates run locally and do not send keywords.</p>
+        </div>
+        <button id="privacyButton" class="text-button" type="button" data-i18n="welcome.privacyLink">Read data details</button>
+      </section>
+    </main>
+
+    <footer class="welcome-footer">
+      <span data-i18n="options.footerVersion">SEOanalysis 1.0.0 · Manifest V3</span>
+      <span data-i18n="welcome.footer">Built for repeated SEO decisions.</span>
+    </footer>
+
+    <script src="../vendor/lucide.min.js"></script>
+    <script type="module" src="./welcome.js"></script>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEOanalysis Settings</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="top-header-inner">
+        <a class="brand-link" href="./welcome.html" aria-label="SEOanalysis home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 128 128">
+              <defs>
+                <linearGradient id="logoGradient" x1="18" y1="12" x2="108" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E14550"></stop>
+                  <stop offset="1" stop-color="#971B2B"></stop>
+                </linearGradient>
+              </defs>
+              <rect width="128" height="128" rx="29" fill="url(#logoGradient)"></rect>
+              <circle cx="57" cy="55" r="27" fill="none" stroke="#fff" stroke-width="10"></circle>
+              <path d="M77 75 98 96" fill="none" stroke="#F39A82" stroke-linecap="round" stroke-width="12"></path>
+              <rect x="43" y="59" width="8" height="14" rx="3" fill="#fff"></rect>
+              <rect x="55" y="50" width="8" height="23" rx="3" fill="#fff"></rect>
+              <rect x="67" y="41" width="8" height="32" rx="3" fill="#FFD0D3"></rect>
+            </svg>
+          </span>
+          <span>
+            <strong>SEOanalysis</strong>
+            <small data-i18n="options.brandSubtitle">Settings and data sources</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <span id="planBadge" class="plan-badge" data-plan="free">FREE</span>
+          <button id="headerTrialButton" class="outline-button" type="button" data-i18n="options.trialPro">Try Pro</button>
+          <button id="closeTabButton" class="icon-button" type="button" title="Close page" aria-label="Close page" data-i18n-title="common.close" data-i18n-aria-label="common.close">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-intro">
+        <div>
+          <p class="eyebrow" data-i18n="options.eyebrow">WORKSPACE SETTINGS</p>
+          <h1 data-i18n="options.heading">Transparent data sources and page behavior</h1>
+          <p class="intro-copy" data-i18n="options.intro">Free estimates run on this device.</p>
+        </div>
+        <div class="intro-status">
+          <span class="status-light"></span>
+          <div>
+            <strong id="statusTitle" data-i18n="options.running">SEOanalysis is running</strong>
+            <span id="statusCopy">30/30</span>
+          </div>
+        </div>
+      </section>
+
+      <form id="settingsForm">
+        <section class="settings-section">
+          <div class="section-copy">
+            <p class="section-kicker" data-i18n="options.dataKicker">DATA SOURCE</p>
+            <h2 data-i18n="options.dataTitle">Keyword data</h2>
+            <p data-i18n="options.dataDesc">Local estimates never send keywords.</p>
+          </div>
+          <div class="section-controls">
+            <div class="source-options" role="radiogroup" aria-label="Data source" data-i18n-aria-label="options.dataTitle">
+              <label class="source-option">
+                <input type="radio" name="dataSource" value="local" />
+                <span class="source-option-body">
+                  <span class="source-icon"><i data-lucide="cpu"></i></span>
+                  <span>
+                    <strong data-i18n="options.localTitle">Local estimate</strong>
+                    <small data-i18n="options.localDesc">Instant, no account, clearly labeled</small>
+                  </span>
+                  <span class="radio-dot"></span>
+                </span>
+              </label>
+              <label class="source-option">
+                <input type="radio" name="dataSource" value="dataforseo" />
+                <span class="source-option-body">
+                  <span class="source-icon premium"><i data-lucide="satellite-dish"></i></span>
+                  <span>
+                    <strong><span data-i18n="options.proSourceTitle">DataForSEO</span> <em>PRO</em></strong>
+                    <small data-i18n="options.proSourceDesc">Exact volume, CPC, competition, and trends</small>
+                  </span>
+                  <span class="radio-dot"></span>
+                </span>
+              </label>
+            </div>
+
+            <div id="dataForSeoFields" class="credential-panel" hidden>
+              <div class="credential-heading">
+                <div>
+                  <strong data-i18n="options.credentialsTitle">DataForSEO credentials</strong>
+                  <span data-i18n="options.credentialsDesc">Find API login and password in the DataForSEO dashboard.</span>
+                </div>
+                <a href="https://dataforseo.com/apis" target="_blank" rel="noreferrer" data-i18n="options.openDashboard">Open dashboard</a>
+              </div>
+              <div class="field-grid">
+                <label class="field">
+                  <span data-i18n="options.apiLogin">API Login</span>
+                  <input id="dataForSeoLogin" type="text" autocomplete="username" placeholder="name@example.com" />
+                </label>
+                <label class="field">
+                  <span data-i18n="options.apiPassword">API Password</span>
+                  <span class="password-field">
+                    <input id="dataForSeoPassword" type="password" autocomplete="current-password" placeholder="••••••••••••" />
+                    <button id="togglePasswordButton" type="button" title="Show password" aria-label="Show password" data-i18n-title="options.showPassword" data-i18n-aria-label="options.showPassword">
+                      <i data-lucide="eye"></i>
+                    </button>
+                  </span>
+                </label>
+              </div>
+              <div class="credential-actions">
+                <button id="testConnectionButton" class="outline-button" type="button">
+                  <i data-lucide="plug-zap"></i><span data-i18n="options.testConnection">Test connection</span>
+                </button>
+                <button id="clearCredentialsButton" class="text-button danger-text" type="button">
+                  <span data-i18n="options.clearCredentials">Clear credentials</span>
+                </button>
+                <span id="connectionResult" class="connection-result"></span>
+              </div>
+            </div>
+
+            <div class="inline-setting">
+              <div>
+                <strong data-i18n="options.defaultCountryTitle">Default search country</strong>
+                <span data-i18n="options.defaultCountryDesc">The SERP card and workspace use this country.</span>
+              </div>
+              <select id="countrySelect" class="select-control" aria-label="Default search country" data-i18n-aria-label="options.defaultCountryTitle"></select>
+            </div>
+            <div class="inline-setting">
+              <div>
+                <strong data-i18n="options.languageTitle">Interface language</strong>
+                <span data-i18n="options.languageDesc">Applied across the extension.</span>
+              </div>
+              <select id="languageSelect" class="select-control" aria-label="Interface language" data-i18n-aria-label="options.languageTitle"></select>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-copy">
+            <p class="section-kicker" data-i18n="options.serpKicker">SERP EXPERIENCE</p>
+            <h2 data-i18n="options.serpTitle">Results page experience</h2>
+            <p data-i18n="options.serpDesc">Stay lightweight and never overlay Google content.</p>
+          </div>
+          <div class="section-controls stack-controls">
+            <label class="toggle-row">
+              <span>
+                <strong data-i18n="options.enableTitle">Enable the SERP keyword card</strong>
+                <small data-i18n="options.enableDesc">Show volume, competition, and opportunity directly in Google Search.</small>
+              </span>
+              <input id="enabledToggle" type="checkbox" />
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+            <label class="toggle-row">
+              <span>
+                <strong data-i18n="options.compactTitle">Compact mode</strong>
+                <small data-i18n="options.compactDesc">Hide the extended area and keep only core metrics.</small>
+              </span>
+              <input id="compactToggle" type="checkbox" />
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+            <label class="toggle-row">
+              <span>
+                <strong data-i18n="options.relatedTitle">Show related opportunity entry</strong>
+                <small data-i18n="options.relatedDesc">Keep the long-tail upgrade path visible.</small>
+              </span>
+              <input id="relatedToggle" type="checkbox" />
+              <span class="toggle" aria-hidden="true"></span>
+            </label>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-copy">
+            <p class="section-kicker" data-i18n="options.planKicker">PLAN</p>
+            <h2 data-i18n="options.planTitle">Free and Pro</h2>
+            <p data-i18n="options.planDesc">Core metrics are never behind a paywall.</p>
+          </div>
+          <div class="section-controls">
+            <div class="plan-compare">
+              <div class="plan-column">
+                <div class="plan-heading">
+                  <span class="plan-label" data-i18n="options.freeLabel">FREE</span>
+                  <strong data-i18n="options.freePlanTitle">Always available</strong>
+                  <span data-i18n="options.freePrice">¥0</span>
+                </div>
+                <ul>
+                  <li><i data-lucide="check"></i><span data-i18n="options.freeItem1">30 analyses / day</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.freeItem2">Volume, competition, CPC, opportunity</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.freeItem3">Up to 20 saved keywords</span></li>
+                  <li><i data-lucide="minus"></i><span data-i18n="options.freeItem4">No trends or related terms</span></li>
+                  <li><i data-lucide="minus"></i><span data-i18n="options.freeItem5">No CSV export</span></li>
+                </ul>
+              </div>
+              <div class="plan-column pro-column">
+                <div class="plan-heading">
+                  <span class="plan-label" data-i18n="options.proLabel">PRO</span>
+                  <strong data-i18n="options.proPlanTitle">7-day free trial</strong>
+                  <span data-i18n="options.proPrice">Subscription access</span>
+                </div>
+                <ul>
+                  <li><i data-lucide="check"></i><span data-i18n="options.proItem1">Unlimited analyses</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.proItem2">DataForSEO exact data</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.proItem3">12-month trends and related terms</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.proItem4">Unlimited saves and CSV export</span></li>
+                  <li><i data-lucide="check"></i><span data-i18n="options.proItem5">First access to new data sources</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="trial-row">
+              <div>
+                <strong id="trialTitle" data-i18n="options.trialTitle">Start a 7-day Pro trial</strong>
+                <span id="trialCopy" data-i18n="options.trialDesc">No credit card required.</span>
+              </div>
+              <button id="trialButton" class="primary-button" type="button">
+                <i data-lucide="sparkles"></i><span data-i18n="options.startTrial">Start trial</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section">
+          <div class="section-copy">
+            <p class="section-kicker" data-i18n="options.privacyKicker">PRIVACY & DATA</p>
+            <h2 data-i18n="options.privacyTitle">Local data</h2>
+            <p data-i18n="options.privacyDesc">Saved data stays on this device.</p>
+          </div>
+          <div class="section-controls stack-controls">
+            <div class="data-action-row">
+              <div>
+                <strong data-i18n="options.cacheTitle">Keyword cache</strong>
+                <span data-i18n="options.cacheDesc">Entries expire after 12 hours.</span>
+              </div>
+              <button id="clearCacheButton" class="outline-button" type="button">
+                <i data-lucide="refresh-cw"></i><span data-i18n="options.clearCache">Clear cache</span>
+              </button>
+            </div>
+            <div class="data-action-row">
+              <div>
+                <strong data-i18n="options.exportTitle">Export local data</strong>
+                <span data-i18n="options.exportDesc">Download saved keywords and history as JSON.</span>
+              </div>
+              <button id="exportDataButton" class="outline-button" type="button">
+                <i data-lucide="download"></i><span data-i18n="options.exportJson">Export JSON</span>
+              </button>
+            </div>
+            <div class="data-action-row">
+              <div>
+                <strong data-i18n="options.resetTitle">Restore demo state</strong>
+                <span data-i18n="options.resetDesc">Delete saved data while keeping settings.</span>
+              </div>
+              <button id="resetDataButton" class="outline-button danger-button" type="button">
+                <i data-lucide="rotate-ccw"></i><span data-i18n="options.resetData">Reset data</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="save-bar">
+          <span id="saveStatus" data-i18n="options.saveStatus">Settings save to this device</span>
+          <div class="save-actions">
+            <button id="openSearchButton" class="outline-button" type="button">
+              <i data-lucide="search"></i><span data-i18n="options.openGoogle">Open Google Search</span>
+            </button>
+            <button class="primary-button" type="submit">
+              <i data-lucide="check"></i><span data-i18n="options.saveSettings">Save settings</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <footer class="page-footer">
+        <span data-i18n="options.footerVersion">SEOanalysis 1.0.0 · Manifest V3</span>
+        <span data-i18n="options.footerWarning">Estimates are not official Google search volume.</span>
+      </footer>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="../vendor/lucide.min.js"></script>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

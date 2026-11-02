@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SEOanalysis</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-lens"></span>
+            <span class="brand-handle"></span>
+            <span class="brand-bars"><i></i><i></i><i></i></span>
+          </span>
+          <div>
+            <div class="brand-name">SEOanalysis</div>
+            <div class="brand-subtitle" data-i18n="popup.subtitle">SERP keyword intelligence</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <span id="planBadge" class="plan-badge" data-plan="free">FREE</span>
+          <button id="languageButton" class="language-button" title="Switch language" aria-label="Switch language">
+            <i data-lucide="languages"></i><span id="languageButtonText">EN</span>
+          </button>
+          <button id="settingsButton" class="icon-button" title="Settings" aria-label="Settings" data-i18n-title="common.settings" data-i18n-aria-label="common.settings">
+            <i data-lucide="settings-2"></i>
+          </button>
+        </div>
+      </header>
+
+      <div id="quotaBar" class="quota-bar" hidden>
+        <div class="quota-copy">
+          <span id="quotaText" data-i18n="common.remainingToday">Today's free quota</span>
+          <button id="trialInlineButton" class="link-button" data-i18n="popup.freeTrial">Try Pro free</button>
+        </div>
+        <div class="quota-track"><span id="quotaFill"></span></div>
+      </div>
+
+      <main class="app-main">
+        <form id="searchForm" class="search-panel" autocomplete="off">
+          <label class="sr-only" for="keywordInput" data-i18n="popup.keywordLabel">Keyword</label>
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="keywordInput" type="text" placeholder="Analyze a keyword opportunity" maxlength="120" data-i18n-placeholder="popup.searchPlaceholder" />
+          <select id="countrySelect" aria-label="Search country" data-i18n-aria-label="options.defaultCountryTitle"></select>
+          <button class="analyze-button" type="submit" aria-label="Analyze keyword" data-i18n-aria-label="popup.analyze">
+            <i data-lucide="arrow-up-right"></i>
+          </button>
+        </form>
+
+        <nav class="view-tabs" aria-label="Workspace views" data-i18n-aria-label="popup.workspaceViews">
+          <button class="view-tab is-active" type="button" data-view="analysis">
+            <i data-lucide="scan-search"></i><span data-i18n="popup.tab.analysis">Analyze</span>
+          </button>
+          <button class="view-tab" type="button" data-view="saved">
+            <i data-lucide="bookmark"></i><span data-i18n="popup.tab.saved">Saved</span><b id="savedCount">0</b>
+          </button>
+          <button class="view-tab" type="button" data-view="history">
+            <i data-lucide="history"></i><span data-i18n="popup.tab.history">Activity</span>
+          </button>
+        </nav>
+
+        <section id="analysisView" class="view-panel is-active" aria-live="polite">
+          <div id="analysisContent"></div>
+        </section>
+
+        <section id="savedView" class="view-panel" aria-live="polite">
+          <div class="section-heading">
+            <div>
+              <h2 data-i18n="popup.savedHeading">Saved keywords</h2>
+              <p id="savedMeta">Free plan limit</p>
+            </div>
+            <button id="exportButton" class="small-button" type="button">
+              <i data-lucide="download"></i><span data-i18n="popup.exportCsv">Export CSV</span>
+            </button>
+          </div>
+          <div id="savedContent"></div>
+        </section>
+
+        <section id="historyView" class="view-panel" aria-live="polite">
+          <div class="section-heading">
+            <div>
+              <h2 data-i18n="popup.historyHeading">Recent analyses</h2>
+              <p data-i18n="popup.historySubtitle">Stored only on this device</p>
+            </div>
+            <button id="openOptionsButton" class="small-button" type="button">
+              <i data-lucide="shield-check"></i><span data-i18n="popup.dataSettings">Data settings</span>
+            </button>
+          </div>
+          <div id="historyContent"></div>
+        </section>
+      </main>
+
+      <footer id="upgradeFooter" class="upgrade-footer">
+        <div class="upgrade-copy">
+          <span class="upgrade-icon"><i data-lucide="sparkles"></i></span>
+          <div>
+            <strong data-i18n="popup.upgradeTitle">Unlock exact data and trends</strong>
+            <span data-i18n="popup.upgradeDesc">Pro removes limits and supports API data</span>
+          </div>
+        </div>
+        <button id="trialButton" class="upgrade-button" type="button" data-i18n="popup.trialDays">Try 7 days</button>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../vendor/lucide.min.js"></script>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

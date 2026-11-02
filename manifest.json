@@ -1,0 +1,123 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "short_name": "__MSG_extensionShortName__",
+  "version": "1.1.0",
+  "description": "__MSG_extensionDescription__",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.dataforseo.com/*",
+    "https://www.google.com/*",
+    "https://www.google.co.uk/*",
+    "https://www.google.ca/*",
+    "https://www.google.com.au/*",
+    "https://www.google.co.nz/*",
+    "https://www.google.de/*",
+    "https://www.google.fr/*",
+    "https://www.google.es/*",
+    "https://www.google.it/*",
+    "https://www.google.nl/*",
+    "https://www.google.co.jp/*",
+    "https://www.google.co.kr/*",
+    "https://www.google.com.sg/*",
+    "https://www.google.com.hk/*",
+    "https://www.google.com.tw/*",
+    "https://www.google.com.br/*",
+    "https://www.google.co.in/*",
+    "https://www.google.com.mx/*",
+    "https://www.google.ae/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "__MSG_actionTitle__",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/search*",
+        "https://www.google.co.uk/search*",
+        "https://www.google.ca/search*",
+        "https://www.google.com.au/search*",
+        "https://www.google.co.nz/search*",
+        "https://www.google.de/search*",
+        "https://www.google.fr/search*",
+        "https://www.google.es/search*",
+        "https://www.google.it/search*",
+        "https://www.google.nl/search*",
+        "https://www.google.co.jp/search*",
+        "https://www.google.co.kr/search*",
+        "https://www.google.com.sg/search*",
+        "https://www.google.com.hk/search*",
+        "https://www.google.com.tw/search*",
+        "https://www.google.com.br/search*",
+        "https://www.google.co.in/search*",
+        "https://www.google.com.mx/search*",
+        "https://www.google.ae/search*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "src/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/i18n.js"
+      ],
+      "matches": [
+        "https://www.google.com/*",
+        "https://www.google.co.uk/*",
+        "https://www.google.ca/*",
+        "https://www.google.com.au/*",
+        "https://www.google.co.nz/*",
+        "https://www.google.de/*",
+        "https://www.google.fr/*",
+        "https://www.google.es/*",
+        "https://www.google.it/*",
+        "https://www.google.nl/*",
+        "https://www.google.co.jp/*",
+        "https://www.google.co.kr/*",
+        "https://www.google.com.sg/*",
+        "https://www.google.com.hk/*",
+        "https://www.google.com.tw/*",
+        "https://www.google.com.br/*",
+        "https://www.google.co.in/*",
+        "https://www.google.com.mx/*",
+        "https://www.google.ae/*"
+      ]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+K",
+        "mac": "Alt+Shift+K"
+      },
+      "description": "打开 SEOanalysis"
+    }
+  }
+}
